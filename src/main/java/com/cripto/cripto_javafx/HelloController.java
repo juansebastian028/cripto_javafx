@@ -87,7 +87,7 @@ public class HelloController {
         FileOutputStream fileOut;
         ObjectOutputStream out;
         try {
-            fileOut = new FileOutputStream(Objects.requireNonNullElse(fileName, "C:\\Users\\Juan\\Downloads\\secretKey ("+ count +") .txt"));
+            fileOut = new FileOutputStream(Objects.requireNonNullElse(fileName, "C:\\Users\\"+ System.getProperty("user.name") +"\\Downloads\\secretKey ("+ count +") .txt"));
             JOptionPane.showMessageDialog(null, "La secret Key se guardado en Descargas con éxito");
             out = new ObjectOutputStream(fileOut);
             out.writeObject(secretKey);
